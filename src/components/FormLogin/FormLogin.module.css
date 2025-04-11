@@ -1,0 +1,15 @@
+.form {
+    background-color: var(--grey3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* margin-top: 10px; */
+    width: 100%;
+}
+
+p {
+    color: var(--grey1);
+    margin: 20px 0;
+}

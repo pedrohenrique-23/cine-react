@@ -1,0 +1,37 @@
+.btn{
+    /* width: 133.67px; */
+    width: 100%;
+    height: 48px;
+    border-radius: 4.06px;
+    /* border: 1.22px solid var(--color-primary); */
+
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: var(--color-primary);
+}
+
+.primary:hover {
+    background-color: var(--color-primary-focus);
+}
+
+.primary-negative {
+    background-color: var(--color-primary-negative);
+}
+
+.disabled {
+    background-color: var(--grey1);
+}
+
+.disabled:hover {
+    background-color: var(--grey2);
+}
+
+/* Falta criar o primário negativo, desabilitado e desabilitado hover */
+
