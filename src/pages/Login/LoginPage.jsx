@@ -1,6 +1,6 @@
 import React from 'react'
 import FormLogin from '../../components/FormLogin/FormLogin'
-import styles from './Login.module.css'
+import styles from './LoginPage.module.css'
 
 
 const LoginPage = () => {
