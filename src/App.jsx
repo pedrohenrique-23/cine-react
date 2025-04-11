@@ -1,5 +1,5 @@
-import LoginPage from './pages/Login/Login'
-import Register from './pages/Register/Register'
+import LoginPage from './pages/Login/LoginPage'
+import RegisterPage from './pages/Register/RegisterPage'
 import "./styles/index.css"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
      {/* <LoginPage /> */}
-     <Register />
+     <RegisterPage />
     </>
   )
 }
