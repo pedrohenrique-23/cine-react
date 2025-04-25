@@ -48,6 +48,7 @@ import { useState } from "react";
 import styles from "./FormRegister.module.css";
 import Input from "../Input/Input";
 import { registerSchema } from "../../schemas/registerSchema";
+import { useNavigate } from "react-router-dom";
 
 
 const FormRegister = () => {
@@ -56,6 +57,7 @@ const FormRegister = () => {
     password: "",
     confirmPassword: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -63,16 +65,9 @@ const FormRegister = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    try {
-      registerSchema.parse(formData); // Validação com Zod
-      console.log("Dados válidos:", formData);
-      // Aqui entraria a lógica de cadastro (ex: Firebase)
-    } catch (error) {
-      if (error.errors) {
-        alert(error.errors[0].message); // Exibe a primeira mensagem de erro
-      }
-    }
+    console.log("Register Data:", formData);
+    navigate("/login")
+    
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -103,7 +98,7 @@ const FormRegister = () => {
       />
       <button type="submit" className={`${styles.btn} btn primary`}>Cadastrar</button>
       <p className="headline-bold">Já possui uma conta?</p>
-      <button className="btn disabled">Entrar</button>
+      <button className="btn disabled" onClick={() => navigate("/login")}>Entrar</button>
     </form>
   );
 };
