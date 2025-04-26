@@ -1,23 +1,8 @@
 // src/components/FormLogin.js
-import { useState } from "react";
 import styles from "./FormLogin.module.css"
 import Input from "../Input/Input";
-import { useNavigate } from "react-router-dom";
 
-const FormLogin = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login Data:", formData);
-    navigate("/register")
-  };
-
+const FormLogin = ({ formData, handleChange, handleSubmit, handleNavigate }) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <h2>Login</h2>
@@ -39,7 +24,7 @@ const FormLogin = () => {
       />
       <button type="submit" className={`${styles.btn} btn primary`}>Entrar</button>
       <p className="headline-bold">Ainda não possui uma conta?</p>
-      <button className="btn disabled" onClick={() => navigate("/register")}>Cadastrar</button>
+      <button className="btn disabled" type="button" onClick={handleNavigate}>Cadastrar</button>
     </form>
   );
 };
