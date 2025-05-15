@@ -13,11 +13,17 @@
 .title2 {
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
+    color: white;
+    font-family: 'Inter';
 }
 
 .headline {
     font-weight: normal;
     font-size: 12px;
+    text-align: center;
+    color: white;
+    font-family: 'Inter';
 }
 
 .headline-bold {
