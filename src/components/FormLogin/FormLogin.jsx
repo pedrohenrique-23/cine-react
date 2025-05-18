@@ -51,7 +51,7 @@ const FormLogin = () => {
 
       <button type="submit" className={`${styles.btn} btn primary`}>Entrar</button>
 
-      <p className="headline-bold">Ainda não tem uma conta?</p>
+      {/* <p className="headline-bold">Ainda não tem uma conta?</p> */}
       <button className="btn disabled" onClick={() => navigate("/register")}>
         Criar conta
       </button>
