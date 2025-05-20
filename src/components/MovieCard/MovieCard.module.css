@@ -31,3 +31,14 @@
   font-size: 0.85rem;
   color: #ccc;
 }
+
+.favoriteButton {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: red;
+  display: block;
+  margin: 0 auto;
+}
