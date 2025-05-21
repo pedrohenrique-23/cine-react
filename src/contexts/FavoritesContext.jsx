@@ -40,6 +40,7 @@
 // };
 
 // src/context/FavoritesContext.jsx
+import { db } from "../services/firebase"
 import { createContext, useContext, useState } from "react";
 
 const FavoritesContext = createContext();
