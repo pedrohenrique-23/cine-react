@@ -1,7 +1,7 @@
 // src/components/Navbar/Navbar.jsx
 import React from 'react';
 import styles from './Navbar.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className={styles.logo}>CineReact</div>
       <ul className={styles.navLinks}>
         <li><a href="/">Home</a></li>
-        <li><a href="/favorites">Favoritos</a></li>
+        <li><Link to="/favorites">Favoritos</Link></li>
         <li><button className={styles.logoutBtn} onClick={() => navigate("/login")}>Sair</button></li>
       </ul>
     </nav>

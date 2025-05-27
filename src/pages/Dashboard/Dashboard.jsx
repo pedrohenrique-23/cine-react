@@ -6,6 +6,8 @@ import MovieSection from "../../components/MovieSection/MovieSection";
 import MovieModal from "../../components/MovieModal/MovieModal";
 import { getPopularMovies } from "../../services/tmdb";
 
+import { useAuth } from "../../contexts/AuthContext";
+
 const Dashboard = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -32,6 +34,9 @@ const Dashboard = () => {
     setIsModalOpen(false);
     setSelectedMovie(null);
   };
+
+  const { user } = useAuth();
+  console.log(user)
 
   return (
     <>
