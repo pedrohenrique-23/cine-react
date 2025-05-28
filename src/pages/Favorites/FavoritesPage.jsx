@@ -1,36 +1,21 @@
 // src/pages/FavoritesPage.jsx
-import { useEffect, useState } from "react";
-import { db } from "../../services/firebase"
-import { doc, getDoc } from "firebase/firestore";
+import { useFavorites } from "../../contexts/FavoritesContext";
 import { useAuth } from "../../contexts/AuthContext";
 import MovieCard from "../../components/MovieCard/MovieCard";
-import styles from "./FavoritesPage.module.css"; 
+import styles from "./FavoritesPage.module.css";
+import MovieModal from "../../components/MovieModal/MovieModal";
+import { useState } from "react";
 
 const FavoritesPage = () => {
   const { user } = useAuth();
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const { favorites } = useFavorites(); // <-- usando favoritos do contexto
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchFavorites = async () => {
-      if (user) {
-        try {
-          const userDocRef = doc(db, "favorites", user.uid);
-          const userDocSnap = await getDoc(userDocRef);
-
-          if (userDocSnap.exists()) {
-            const data = userDocSnap.data();
-            setFavoriteMovies(data.movies || []);
-          } else {
-            console.log("Nenhum favorito encontrado.");
-          }
-        } catch (error) {
-          console.error("Erro ao buscar favoritos:", error);
-        }
-      }
-    };
-
-    fetchFavorites();
-  }, [user]);
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
+    setIsModalOpen(true);
+  };
 
   if (!user) return <p>Você precisa estar logado para ver seus favoritos.</p>;
 
@@ -38,14 +23,24 @@ const FavoritesPage = () => {
     <div className={styles.favoritesContainer}>
       <h1>Meus Favoritos</h1>
       <div className={styles.moviesGrid}>
-        {favoriteMovies.length > 0 ? (
-          favoriteMovies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+        {favorites.length > 0 ? (
+          favorites.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              onClick={() => handleMovieClick(movie)}
+            />
           ))
         ) : (
           <p>Você ainda não adicionou nenhum filme aos favoritos.</p>
         )}
       </div>
+      {isModalOpen && selectedMovie && (
+        <MovieModal
+          movie={selectedMovie}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 };
