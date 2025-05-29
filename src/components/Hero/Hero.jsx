@@ -1,9 +1,16 @@
-// src/components/Hero/Hero.jsx
 import React from 'react';
 import styles from './Hero.module.css';
 
 const Hero = ({ movie }) => {
   if (!movie) return null;
+  
+  const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
 
   return (
     <section
@@ -15,7 +22,7 @@ const Hero = ({ movie }) => {
       <div className={styles.overlay}>
         <h1>{movie.title}</h1>
         <p>Nota: {movie.vote_average}</p>
-        <p>Data de lançamento: {movie.release_date}</p>
+        <p>Data: {formatDate(movie.release_date)}</p>
         <p className={styles.overview}>{movie.overview}</p>
       </div>
     </section>

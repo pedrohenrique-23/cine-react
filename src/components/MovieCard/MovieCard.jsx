@@ -1,15 +1,28 @@
-// src/components/MovieCard/MovieCard.jsx
 import React from "react";
 import styles from "./MovieCard.module.css";
 import { useFavorites } from "../../contexts/FavoritesContext";
 
-const MovieCard = ({ movie, onClick }) => {
+const MovieCard = ({ movie, onClick, onToggleFavorite }) => {
   const { toggleFavorite, isFavorite } = useFavorites();
 
   const handleFavoriteClick = (e) => {
-    toggleFavorite(movie);
     e.stopPropagation();
+    const wasFavorite = isFavorite(movie.id);
+    toggleFavorite(movie);
+
+    if (wasFavorite && onToggleFavorite) {
+      onToggleFavorite(movie);
+    }
   };
+
+  const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
+
 
   return (
     <div className={styles.movieCard} onClick={onClick}>
@@ -19,7 +32,7 @@ const MovieCard = ({ movie, onClick }) => {
       />
       <h3>{movie.title}</h3>
       <p>Nota: {movie.vote_average}</p>
-      <p>Data: {movie.release_date}</p>
+      <p>Data: {formatDate(movie.release_date)}</p>
 
       <button
         className={styles.favoriteButton}
