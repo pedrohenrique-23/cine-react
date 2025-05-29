@@ -1,11 +1,46 @@
 .favoritesContainer {
   padding: 2rem;
-  color: rgb(0, 0, 0);
+  color: #fff;
+  background-color: #121212;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.backButton {
+  padding: 0.5rem 1rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #b0060f;
 }
 
 .moviesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.5rem;
+}
+
+.emptyMessage {
+  font-size: 1.2rem;
+  text-align: center;
   margin-top: 2rem;
+  color: #ccc;
 }
