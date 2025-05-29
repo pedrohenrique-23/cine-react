@@ -1,11 +1,9 @@
-// src/pages/Dashboard/Dashboard.jsx
 import { useEffect, useState } from "react";
-import Navbar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import MovieSection from "../../components/MovieSection/MovieSection";
 import MovieModal from "../../components/MovieModal/MovieModal";
 import { getPopularMovies } from "../../services/tmdb";
-
 import { useAuth } from "../../contexts/AuthContext";
 
 const Dashboard = () => {

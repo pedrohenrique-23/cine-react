@@ -1,4 +1,3 @@
-// src/components/MovieModal/MovieModal.jsx
 import React from "react";
 import styles from "./MovieModal.module.css";
 

@@ -14,7 +14,6 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login Data:", formData);
-    // Aqui no futuro: chamar login do contexto
   };
 
   const handleNavigate = () => {

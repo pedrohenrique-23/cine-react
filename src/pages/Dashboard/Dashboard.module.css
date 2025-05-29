@@ -44,17 +44,16 @@
 }
 
 .titleCard {
-  /* Outros estilos que você já tem */
-  word-break: break-word; /* Quebra palavras longas */
-  overflow-wrap: break-word; /* Alternativa para navegadores mais novos */
+  word-break: break-word; 
+  overflow-wrap: break-word; 
   text-align: center;
   font-size: 18px;
 }
 
 .moviesContainer {
   display: flex;
-  justify-content: flex-start; /* Alinha os itens à esquerda para evitar espaços vazios à esquerda */
-  align-items: flex-start; /* Alinha os itens ao topo */
+  justify-content: flex-start;
+  align-items: flex-start; 
   width: 100%;
   flex-wrap: wrap;
   gap: 35px;

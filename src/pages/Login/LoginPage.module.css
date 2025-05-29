@@ -6,11 +6,11 @@
 }
 
 .container {
-    width: 100vw;               /* largura da tela inteira */
-    height: 100vh;              /* altura da tela inteira */
-    display: flex;              /* ativa o flexbox */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     flex-direction: column;
-    justify-content: center;    /* centraliza no eixo horizontal */
+    justify-content: center;
     align-items: center;  
     align-items: center;
     background-color: var(--grey4);

@@ -26,10 +26,12 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding-top: 6px;
+  display: flex;
 }
 
 .navLinks li a:hover {
-  color: #ff4500; /* cor destaque */
+  color: #ff4500;
 }
 
 .logoutBtn {

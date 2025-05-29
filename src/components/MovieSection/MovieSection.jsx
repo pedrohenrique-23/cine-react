@@ -1,4 +1,3 @@
-// src/components/MovieSection/MovieSection.jsx
 import React from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import styles from "./MovieSection.module.css";

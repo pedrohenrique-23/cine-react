@@ -6,7 +6,7 @@ import Input from "../Input/Input";
 import styles from "./FormLogin.module.css";
 import { toast } from "react-toastify";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/firebase"; // Importa sua instância do Firebase
+import { auth } from "../../services/firebase";
 
 const FormLogin = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const FormLogin = () => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       toast.success("Login realizado com sucesso!");
-      navigate("/dashboard"); // Redireciona para o dashboard
+      navigate("/dashboard"); 
     } catch (error) {
       if (error.code === "auth/user-not-found") {
         toast.error("Usuário não encontrado.");

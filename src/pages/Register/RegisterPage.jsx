@@ -1,4 +1,3 @@
-// src/pages/Register/RegisterPage.jsx
 import React from "react";
 import FormRegister from "../../components/FormRegister/FormRegister";
 import styles from './RegisterPage.module.css';
@@ -9,7 +8,6 @@ const RegisterPage = () => {
 
   const handleRegister = (formData) => {
     console.log("Register Data:", formData);
-    // Aqui futuramente vai sua lógica de validação ou API
     navigate("/login");
   };
 
