@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -18,4 +18,52 @@
   font-size: 12px;
 }
   
-  
+   */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+.input {
+  height: 40px;
+  border: 1px solid #2c2c2c;
+  border-radius: 6px;
+  padding: 0;
+  padding-left: 6px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  width: 96%;
+  font-size: 15px;
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #888888;
+}
+
+.input:hover {
+  background-color: #222;
+  border-color: #444;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.4);
+}
+
+.error {
+  color: #ff5e5e;
+  font-size: 12px;
+  margin-top: 2px;
+}
